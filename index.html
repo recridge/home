@@ -24,8 +24,8 @@
       text-align: center;
     }
 
-    /* Black Fade-In Overlay (Slowed down to 4.5 seconds) */
-    #fade-overlay {
+    /* Interactive Entrance Overlay */
+    #enter-overlay {
       position: fixed;
       top: 0;
       left: 0;
@@ -33,18 +33,30 @@
       height: 100vh;
       background-color: #000000;
       z-index: 9999;
-      pointer-events: none;
-      animation: fadeOut 4.5s ease-out forwards;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: opacity 4.5s ease-out;
     }
 
-    @keyframes fadeOut {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-        visibility: hidden;
-      }
+    #enter-overlay.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .enter-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.8);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
     }
 
     /* Fullscreen Sections */
@@ -189,9 +201,11 @@
 </head>
 <body>
 
-  <div id="fade-overlay"></div>
+  <div id="enter-overlay">
+    <div class="enter-text">Click Anywhere to Enter</div>
+  </div>
 
-  <audio id="bg-audio" autoplay loop>
+  <audio id="bg-audio" loop>
     <source src="First Impression by Gribbly.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -247,12 +261,21 @@
   </footer>
 
   <script>
-    document.addEventListener('click', function() {
-      const audio = document.getElementById('bg-audio');
-      if (audio && audio.paused) {
-        audio.play();
-      }
-    }, { once: true });
+    const overlay = document.getElementById('enter-overlay');
+    const audio = document.getElementById('bg-audio');
+
+    overlay.addEventListener('click', function() {
+      // 1. Play audio immediately on interaction
+      audio.play().catch(e => console.log('Audio playback blocked:', e));
+
+      // 2. Trigger the 4.5 second fade out
+      overlay.classList.add('fade-out');
+
+      // 3. Remove overlay from DOM once animation finishes
+      setTimeout(() => {
+        overlay.style.display = 'none';
+      }, 4500);
+    });
   </script>
 
 </body>

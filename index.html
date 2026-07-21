@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rec Ridge Studios - Coming Soon</title>
+
   <style>
-    /* Reset margins and set full height */
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,45 +18,206 @@
     }
 
     body {
-      /* Fallbacks included for maximum compatibility across OS/browsers */
       font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
       background-color: #ff6f00; /* Vibrant Orange */
-      color: #ffffff; /* Crisp white text for contrast */
+      color: #ffffff;
+      text-align: center;
+    }
+
+    /* Fullscreen Sections */
+    section {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
+      padding: 40px 20px;
+      position: relative;
     }
 
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
+    /* MAIN HERO SECTION */
     h1 {
       font-size: 4rem;
       letter-spacing: 2px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for extra pop */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
+    }
+
+    /* Buttons Style */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 32px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-discord {
+      background-color: #5865F2; /* Official Blurple */
+    }
+
+    .btn-discord:hover {
+      background-color: #4752C4;
+    }
+
+    .svg-icon {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+    }
+
+    /* Scroll Down Arrow Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.9;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    /* SOCIALS SECTION */
+    #socials {
+      background-color: #e66400; /* Slightly darker orange for section contrast */
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      margin-bottom: 35px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .socials-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .social-card {
+      background: rgba(0, 0, 0, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      padding: 20px;
+      border-radius: 16px;
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #ffffff;
+      transition: all 0.2s ease;
+    }
+
+    .social-card:hover {
+      background: rgba(0, 0, 0, 0.25);
+      border-color: #ffffff;
+      transform: translateY(-5px);
+    }
+
+    .social-card .svg-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .social-card span {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .social-card small {
+      opacity: 0.8;
+      font-size: 0.9rem;
     }
 
     footer {
       font-size: 1.1rem;
-      padding-bottom: 20px;
+      padding: 30px 20px;
+      background-color: #e66400;
       opacity: 0.9;
     }
   </style>
 </head>
 <body>
 
-  <main>
+  <!-- Top Hero Section -->
+  <section id="hero">
     <h1>Coming Soon</h1>
-  </main>
+    
+    <a href="https://discord.gg/jMW2vjqgd7" target="_blank" class="btn btn-discord">
+      <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36">
+        <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.14c2.64-27.38-4.51-51.11-18.91-72.15ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,45.92,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,45.92,96.12,53,91.08,65.69,84.69,65.69Z"/>
+      </svg>
+      Join our Discord
+    </a>
 
+    <a href="#socials" class="scroll-indicator">
+      Scroll Down
+      <span>▼</span>
+    </a>
+  </section>
+
+  <!-- Social Media Section -->
+  <section id="socials">
+    <h2>Follow Our Socials</h2>
+
+    <div class="socials-grid">
+      <!-- Instagram Card -->
+      <a href="https://instagram.com/recridge" target="_blank" class="social-card">
+        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        <span>Instagram</span>
+        <small>@recridge</small>
+      </a>
+
+      <!-- Threads Card -->
+      <a href="https://threads.net/@recridge" target="_blank" class="social-card">
+        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+          <path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.229c8.249.053 14.474 2.452 18.503 7.129 2.932 3.405 4.893 8.111 5.864 14.05-7.314-1.243-15.224-1.626-23.68-1.14-23.82 1.371-39.134 15.264-38.105 34.568.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.351-22.809-.169-40.06-7.484-51.275-21.742C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.204 17.11 97.013 16.94c22.975.17 40.526 7.52 52.171 21.847 5.71 7.026 10.015 15.86 12.853 26.162l16.147-4.308c-3.44-12.68-8.853-23.606-16.219-32.668C147.036 9.607 125.202.195 97.07 0h-.113C68.882.194 47.292 9.642 32.788 28.08 19.882 44.485 13.224 67.315 13.001 95.932L13 96v.067c.224 28.617 6.882 51.447 19.788 67.854C47.292 182.358 68.882 191.806 96.957 192h.113c24.96-.173 42.554-6.708 57.048-21.189 18.963-18.945 18.392-42.692 12.142-57.27-4.484-10.454-13.033-18.945-24.723-24.553ZM98.44 129.507c-10.44.588-21.286-4.098-21.82-14.135-.397-7.442 5.296-15.746 22.461-16.735 1.966-.114 3.895-.169 5.79-.169 6.235 0 12.068.606 17.371 1.765-1.978 24.702-13.58 28.713-23.802 29.274Z"/>
+        </svg>
+        <span>Threads</span>
+        <small>@recridge</small>
+      </a>
+
+      <!-- TikTok Card -->
+      <a href="https://tiktok.com/@recridge" target="_blank" class="social-card">
+        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+        </svg>
+        <span>TikTok</span>
+        <small>@recridge</small>
+      </a>
+    </div>
+  </section>
+
+  <!-- Copyright Footer -->
   <footer>
     <p>&copy; Rec Ridge Studios, 2026</p>
   </footer>
